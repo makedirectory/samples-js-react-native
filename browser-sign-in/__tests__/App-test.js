@@ -17,7 +17,15 @@ import renderer from 'react-test-renderer';
 import { waitForState } from 'enzyme-async-helpers';
 import {NativeEventEmitter} from 'react-native';
 
-jest.mock('../node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter');
+// RN 0.60
+/*jest.mock(
+  'NativeEventEmitter',
+);*/
+
+// RN 0.61
+jest.mock(
+  '../node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter',
+);
 
 const nativeEmitter = new NativeEventEmitter();
 
@@ -177,7 +185,3 @@ describe('authentication flow', () => {
     expect(wrapper.state().context).toContain('foo');
   });
 });
-
-
-
-

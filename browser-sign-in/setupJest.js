@@ -15,7 +15,6 @@
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {NativeModules} from 'react-native';
-//import {NativeEventEmitter} from 'react-native';
 
 configure({adapter: new Adapter()});
 
