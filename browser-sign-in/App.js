@@ -98,7 +98,11 @@ export default class App extends React.Component {
   }
 
   async logout() {
-    signOut();
+    console.log("Begin signOut()!")
+    const operation = await signOut();
+    console.log('signOut complete' + operation);
+    const token = await getAccessToken();
+    console.log(token)
   }
 
   async getUserIdToken() {
